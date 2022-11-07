@@ -1,7 +1,7 @@
 Feature: Checkout Negative
 
-  Scenario: The user can’t checkout no products
+  Scenario: The user can’t checkout an empty cart
 
-    Given The user is on the search product page
-    When The user clicks on the cart symbol
+    Given The user is logged in
+    When The user clicks on cart symbol
     Then The user can’t checkout no products
