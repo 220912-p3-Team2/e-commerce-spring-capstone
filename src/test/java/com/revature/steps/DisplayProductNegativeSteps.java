@@ -17,10 +17,10 @@ public class DisplayProductNegativeSteps {
     WebDriverWait wait = new WebDriverWait(driver,10);
     @Given("The user is logged in")
     public void theUserIsLoggedIn() {
-        driver.navigate().to("http://localhost:3000/");
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[1]/div/div[2]/div[2]/strong")));
-        driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div/div[2]/div[2]/strong")).click();
+        driver.navigate().to("http://localhost:3000/login");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/main/div/form/button")));
+//        driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div/div[2]/div[2]/strong")).click();
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/main/div/form/button")));
         driver.findElement(By.id("email")).sendKeys("admin2@example.com");
         driver.findElement(By.id("password")).sendKeys("hunter2");
         driver.findElement(By.xpath("//*[@id=\"root\"]/main/div/form/button")).click();
@@ -31,7 +31,7 @@ public class DisplayProductNegativeSteps {
     @When("The user types in a nonexistent product in search bar")
     public void theUserTypesInANonexistentProductInSearchBar() {
         //WebDriverWait wait = new WebDriverWait(driver, 15);
-        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/input")).sendKeys("example");
+        driver.findElement(By.xpath("/html/body/div/div[2]/div/div/input")).sendKeys("example");
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"root\"]/div[3]")));
 
     }
@@ -39,5 +39,6 @@ public class DisplayProductNegativeSteps {
     @Then("The user should not see the product")
     public void theUserShouldNotSeeTheProduct() {
         assertEquals("Congo",driver.getTitle());
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div/div[2]/li/strong")).click();
     }
 }
