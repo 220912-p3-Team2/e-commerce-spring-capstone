@@ -151,4 +151,9 @@ public class CreateUpdateProductPageStepImp {
         editPrice.sendKeys(arg0);
 
     }
+
+    @Then("no new product should be created")
+    public void noNewProductShouldBeCreated() {
+
+    }
 }
