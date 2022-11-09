@@ -53,7 +53,7 @@ public class CheckoutPositiveSteps {
         driver.findElement(By.xpath("/html/body/div/main/div/div[3]/button[2]")).click();
     }
 
-    @Then("The user successfully ordered items")
+    @Then("The user successfully ordered the products")
     public void theUserSuccessfullyOrderedItems() {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("/html/body/div/main/div/h6")));
         assertEquals("Thank you for your order.", driver.findElement(By.xpath("/html/body/div/main/div/h5")).getText());

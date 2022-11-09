@@ -31,7 +31,7 @@ public class DisplayProductNegativeSteps {
     @When("The user types in a nonexistent product in search bar")
     public void theUserTypesInANonexistentProductInSearchBar() {
         //WebDriverWait wait = new WebDriverWait(driver, 15);
-        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div/input")).sendKeys("example");
+        driver.findElement(By.xpath("/html/body/div/div[2]/div/div/input")).sendKeys("example");
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"root\"]/div[3]")));
 
     }
