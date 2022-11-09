@@ -57,5 +57,6 @@ public class CheckoutPositiveSteps {
     public void theUserSuccessfullyOrderedItems() {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("/html/body/div/main/div/h6")));
         assertEquals("Thank you for your order.", driver.findElement(By.xpath("/html/body/div/main/div/h5")).getText());
+        driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/li/strong")).click();
     }
 }

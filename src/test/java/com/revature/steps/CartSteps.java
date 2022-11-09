@@ -37,6 +37,7 @@ public class CartSteps {
     public void theUserSeesAddedProduct() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/button")));
         assertEquals("CHECKOUT NOW",driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/button")).getText());
+        driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/li/strong")).click();
     }
 
     @When("The user removes product")
@@ -48,5 +49,6 @@ public class CartSteps {
     public void theUserSeesTheProductRemovedFromCart() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/button")));
         assertEquals("CONTINUE SHOPPING", driver.findElement(By.xpath("/html/body/div/div[2]/div/div[1]/button")).getText());
+        driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/li/strong")).click();
     }
 }

@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 
     @RunWith(Cucumber.class)
-    @CucumberOptions(features = "src/test/resources/FeaturesDCC/DisplayProductPositive.feature", glue = "com.revature.steps")
+    @CucumberOptions(features = "src/test/resources/FeaturesDCC/DisplayProductNegative.feature", glue = "com.revature.steps")
 public class Runner {
 
 
