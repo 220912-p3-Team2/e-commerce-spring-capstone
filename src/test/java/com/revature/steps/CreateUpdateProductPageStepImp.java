@@ -20,6 +20,8 @@ public class CreateUpdateProductPageStepImp {
     @Given("the user is logged in as admin")
     public void the_user_is_logged_in_as_admin() {
         driver.get("http://localhost:3000/");
+        WebElement logout = driver.findElement(By.xpath("//strong[contains(text(),'LOGOUT')]"));
+        logout.click();
         new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//strong[contains(text(), 'SIGN IN')]")));
         WebElement login = driver.findElement(By.xpath("//strong[contains(text(), 'SIGN IN')]"));
         login.click();
