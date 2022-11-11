@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@SpringBootApplication(exclude = {UserDetailsServiceAutoConfiguration.class, ErrorMvcAutoConfiguration.class})
+@SpringBootApplication(exclude = { UserDetailsServiceAutoConfiguration.class, ErrorMvcAutoConfiguration.class })
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ECommerceApplication {
 
