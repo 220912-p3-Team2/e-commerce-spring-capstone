@@ -1,2 +1,4 @@
-package com.revature.steps;public class ProductReviewSteps {
+package com.revature.steps;
+
+public class ProductReviewsSteps {
 }
