@@ -21,7 +21,7 @@ public class CheckoutNegativeSteps {
     Actions action = new Actions(driver);
     @Then("The user can’t checkout no products")
     public void theUserCanTCheckoutNoProducts() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[2]/div/div[1]/button")));
         assertEquals("CONTINUE SHOPPING", driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/button")).getText());
     }
 
@@ -38,5 +38,15 @@ public class CheckoutNegativeSteps {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("/html/body/div/main/div/h6")));
         assertEquals("Product Out of Stock.", driver.findElement(By.xpath("/html/body/div/main/div/h5")).getText());
         driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/li/strong")).click();
+    }
+
+    @Given("The user is logged in")
+    public void theUserIsLoggedIn() {
+        driver.navigate().to("http://localhost:3000/login");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/main/div/form/button")));
+        driver.findElement(By.id("email")).sendKeys("admin2@example.com");
+        driver.findElement(By.id("password")).sendKeys("hunter2");
+        driver.findElement(By.xpath("//*[@id=\"root\"]/main/div/form/button")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"root\"]/div[1]/div/div[2]/div[2]/strong")));
     }
 }
