@@ -30,6 +30,8 @@ public class CartSteps {
     public void theUserClicksOnCartSymbol() {
         WebElement cart = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/div[4]"));
         action.moveToElement(cart).click().build().perform();
+       
+
 
     }
 
