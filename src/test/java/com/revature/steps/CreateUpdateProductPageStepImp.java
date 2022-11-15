@@ -131,7 +131,10 @@ public class CreateUpdateProductPageStepImp {
     public void theProductShouldFailToUpdate() {
 
         WebElement price = driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[2]/h4"));
-        new WebDriverWait(driver,3).until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(price, "$99.99.00")));
+        new WebDriverWait(driver,3).until(ExpectedConditions.
+                textToBePresentInElement(driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[2]/div[2]/div/input")),
+                        ""));
+        //makes sure Image URL field has been emptied
         Assertions.assertEquals("$99.99",price.getText());
 
     }
@@ -156,6 +159,8 @@ public class CreateUpdateProductPageStepImp {
 
     @Then("no new product should be created")
     public void noNewProductShouldBeCreated() {
+        new WebDriverWait(driver, 2).until(ExpectedConditions.not(ExpectedConditions.urlToBe("http://localhost:3000/admin/createproduct")));
+        Assertions.assertNull(driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[2]/h4")).getText());
 
     }
 }
