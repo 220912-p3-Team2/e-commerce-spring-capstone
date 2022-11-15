@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources", glue = "com.revature.steps")
+@CucumberOptions(features = "src/test/resources", glue = {"com.revature.steps", "com.revature.steps.JIR"})
 
 public class Runner {
 
