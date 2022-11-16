@@ -1,7 +1,6 @@
 package com.revature.steps.JIR;
 
 import com.revature.Runner.Runner;
-import com.revature.runnersJIR.TestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
