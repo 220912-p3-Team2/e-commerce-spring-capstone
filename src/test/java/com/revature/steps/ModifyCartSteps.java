@@ -31,8 +31,8 @@ public class ModifyCartSteps {
                 driver.findElement(By.xpath("//*[@id=\"root\"]/main/div/form/button")).click();
         }
 
-        @When("The user adds a product to cart")
-        public void theUserAddsAProductToCart() {
+        @When("The user adds a product to cart two")
+        public void theUserAddsAProductToCartTwo() {
                 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
                                 By.xpath("//*[@id=\"root\"]/div[3]/div[2]/div/div[2]/div/div[1]/h5")));
                 WebElement product = driver.findElement(By.xpath("/html/body/div/div[3]/div[2]/div/div[1]/div[1]"));
@@ -40,8 +40,8 @@ public class ModifyCartSteps {
 
         }
 
-        @When("The user clicks on cart symbol")
-        public void theUserClicksOnCartSymbol() {
+        @When("The user clicks on cart symbol two")
+        public void theUserClicksOnCartSymbolTwo() {
                 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
                                 By.xpath("/html/body/div/div[1]/div/div[2]/div[4]")));
                 WebElement cart = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[2]/div[4]"));
@@ -49,8 +49,8 @@ public class ModifyCartSteps {
 
         }
 
-        @Then("The user sees added product")
-        public void theUserSeesAddedProduct() {
+        @Then("The user sees added product two")
+        public void theUserSeesAddedProductTwo() {
                 wait.until(
                                 ExpectedConditions.elementToBeClickable(
                                                 By.xpath("//*[@id=\"root\"]/div[2]/div/div[2]/div[2]/button")));

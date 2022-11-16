@@ -2,9 +2,9 @@ Feature: Modify Cart
 
   Scenario: The user adds products to cart and changes quantity
     Given user is logged in and on the product page
-    When The user adds a product to cart
-    When The user clicks on cart symbol
-    Then The user sees added product
+    When The user adds a product to cart two
+    When The user clicks on cart symbol two
+    Then The user sees added product two
 
   Scenario: The user removes products from cart
     Given user is logged in and on the product page again
