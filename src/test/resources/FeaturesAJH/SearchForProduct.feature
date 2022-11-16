@@ -5,7 +5,7 @@ Feature: Search for Products
 
   Scenario: Exact Search
     When the user types the exact name of a product into the search bar
-    Then there should only be one listed product shown
+    Then A product with the same name should be among listed products shown
 
   Scenario: Zero Result Search
     When the user types a string that is not contained by any product name
@@ -13,4 +13,4 @@ Feature: Search for Products
 
   Scenario: Multiresult Search
     When the user types a string that matches multiple products
-    Then there should be more than one listed product shown
+    Then there should be more than zero listed products shown
